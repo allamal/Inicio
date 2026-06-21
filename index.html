@@ -152,7 +152,7 @@
             font-size: 0.95rem;
         }
 
-        /* --- EXPERIENCIA --- */
+        /* --- EXPERIENCIA (LOGOS) --- */
         .experience-grid {
             display: flex;
             flex-wrap: wrap;
@@ -160,20 +160,35 @@
         }
 
         .client-tag {
-            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            height: 90px;
+            padding: 15px;
             background: var(--surface-color);
             border-radius: 12px;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 1.1rem;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+        }
+
+        .client-tag img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Esto evita que los logos se deformen */
+            filter: grayscale(100%) opacity(0.5); /* Filtro blanco y negro */
+            transition: all 0.4s ease;
         }
 
         .client-tag:hover {
-            color: var(--text-main);
-            border-color: var(--text-muted);
+            border-color: var(--primary-color);
             background: rgba(255,255,255,0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .client-tag:hover img {
+            filter: grayscale(0%) opacity(1); /* Vuelve al color original */
         }
 
         /* --- CONTACTO --- */
@@ -217,6 +232,7 @@
             section { padding: 60px 0; }
             .section-title { font-size: 2rem; }
             .contact-card { width: 100%; justify-content: center; }
+            .experience-grid { justify-content: center; }
         }
     </style>
 </head>
@@ -229,7 +245,8 @@
             <h1>Alan Llamal</h1>
             <div class="tagline">L&D | Diseño Instruccional | Employee Experience</div>
             <p class="bio">
-Especialista en aprendizaje organizacional. Diseño experiencias de capacitación, onboarding y transformación digital que conectan personas, procesos y tecnología para generar cambios sostenibles en las organizaciones.            </p>
+                Especialista en aprendizaje organizacional. Diseño experiencias de capacitación, onboarding y transformación digital que conectan personas, procesos y tecnología para generar cambios sostenibles en las organizaciones.
+            </p>
             <a href="#contacto" class="btn">
                 Ver Portfolio <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -276,23 +293,22 @@ Especialista en aprendizaje organizacional. Diseño experiencias de capacitació
         <!-- EXPERIENCIA -->
         <section id="experiencia">
             <h2 class="section-title">Han confiado en mí</h2>
-<div class="experience-grid">
-    <div class="client-tag">
-        <!-- Reemplazá 'ruta-al-logo...' por la URL real o la ruta de tu imagen -->
-        <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/conciencia-identidad-hero.svg" alt="Asociación Conciencia">
-    </div>
-    <div class="client-tag">
-        <img src="https://github.com/allamal/fotos/blob/main/eter%20-%20copia.png?raw=true" alt="ETER">
-    </div>
-    <div class="client-tag">
-        <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/0195a44a-31d8-4925-871c-789c757786f6___2404c1d24902b87e4473b04ee66907a9.svg" alt="Cetrogar">
-    </div>
-    <div class="client-tag">
-        <img src="https://github.com/allamal/fotos/blob/main/images%20-%20copia.png?raw=true" alt="UADE">
-    </div>
-    <div class="client-tag">
-        <img src="https://github.com/allamal/fotos/blob/main/descarga%20-%20copia.png?raw=true" alt="UTN">
-    </div>
+            <div class="experience-grid">
+                <div class="client-tag">
+                    <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/conciencia-identidad-hero.svg" alt="Asociación Conciencia">
+                </div>
+                <div class="client-tag">
+                    <img src="https://github.com/allamal/fotos/blob/main/eter%20-%20copia.png?raw=true" alt="ETER">
+                </div>
+                <div class="client-tag">
+                    <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/0195a44a-31d8-4925-871c-789c757786f6___2404c1d24902b87e4473b04ee66907a9.svg" alt="Cetrogar">
+                </div>
+                <div class="client-tag">
+                    <img src="https://github.com/allamal/fotos/blob/main/images%20-%20copia.png?raw=true" alt="UADE">
+                </div>
+                <div class="client-tag">
+                    <img src="https://github.com/allamal/fotos/blob/main/descarga%20-%20copia.png?raw=true" alt="UTN">
+                </div>
             </div>
         </section>
 
@@ -300,15 +316,20 @@ Especialista en aprendizaje organizacional. Diseño experiencias de capacitació
         <section id="contacto">
             <h2 class="section-title">Contacto</h2>
             <div class="contact-links">
-                <a href="#" class="contact-card">
+                <!-- LinkedIn Link -->
+                <a href="https://www.linkedin.com/in/allamal/" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <i class="fa-brands fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="llamal@live.com.ar" class="contact-card">
+                
+                <!-- Correo Link (mailto:) -->
+                <a href="mailto:llamal@live.com.ar" class="contact-card">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Email</span>
                 </a>
-                <a href="#" class="contact-card">
+                
+                <!-- WhatsApp Link (API) -->
+                <a href="https://wa.me/5491124679179" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
