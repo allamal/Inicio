@@ -1,76 +1,312 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alan Llamal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Llamal | L&D Consultant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-body{
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:auto;
-padding:40px;
-line-height:1.6;
-}
+    <style>
+        :root {
+            --bg-color: #0b1121;
+            --surface-color: #151e32;
+            --primary-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+        }
 
-h1{
-font-size:48px;
-margin-bottom:0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-h2{
-margin-top:40px;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.btn{
-display:inline-block;
-padding:12px 20px;
-background:#0d3b66;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-</style>
+        /* Contenedor principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
 
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .tagline {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .bio {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background-color: var(--primary-color);
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+            background-color: #7dd3fc;
+        }
+
+        /* --- SECCIONES GENÉRICAS --- */
+        section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+
+        /* --- SERVICIOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--surface-color);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- EXPERIENCIA --- */
+        .experience-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .client-tag {
+            padding: 15px 30px;
+            background: var(--surface-color);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .client-tag:hover {
+            color: var(--text-main);
+            border-color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* --- CONTACTO --- */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: var(--surface-color);
+            border-radius: 15px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact-card:hover {
+            background: var(--primary-color);
+            color: #0f172a;
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 1.5rem;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .section-title { font-size: 2rem; }
+            .contact-card { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
 
-<h1>Alan Llamal</h1>
+    <div class="container">
+        
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <h1>Alan Llamal</h1>
+            <div class="tagline">L&D | Diseño Instruccional | Employee Experience</div>
+            <p class="bio">
+                Especialista en aprendizaje organizacional. Diseño experiencias de capacitación, onboarding y transformación digital enfocadas en la optimización de procesos y el desarrollo del talento corporativo.
+            </p>
+            <a href="#contacto" class="btn">
+                Ver Portfolio <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </header>
 
-<p>
-Learning & Development | Diseño Instruccional | Employee Experience
-</p>
+        <!-- SERVICIOS -->
+        <section id="servicios">
+            <h2 class="section-title">Servicios</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Capacitación Corporativa</h3>
+                    <p>Diseño y ejecución de programas de entrenamiento a medida, alineados con los objetivos estratégicos del negocio.</p>
+                </div>
 
-<p>
-Especialista en aprendizaje organizacional con experiencia en capacitación corporativa, onboarding, transformación digital y diseño instruccional.
-</p>
+                <div class="service-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Onboarding</h3>
+                    <p>Creación de experiencias de inmersión ágiles para acelerar la adaptación y productividad del nuevo talento.</p>
+                </div>
 
-<a class="btn" href="#">Ver Portfolio</a>
+                <div class="service-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>E-learning</h3>
+                    <p>Desarrollo de módulos interactivos y simuladores digitales que transforman la teoría en práctica medible.</p>
+                </div>
 
-<h2>Servicios</h2>
+                <div class="service-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Learning Analytics</h3>
+                    <p>Medición del impacto de la capacitación a través de datos y optimización continua de la experiencia de usuario.</p>
+                </div>
 
-<ul>
-<li>Capacitación corporativa</li>
-<li>Onboarding</li>
-<li>E-learning</li>
-<li>Learning Analytics</li>
-<li>IA aplicada al aprendizaje</li>
-</ul>
+                <div class="service-card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>IA aplicada al aprendizaje</h3>
+                    <p>Integración de herramientas de inteligencia artificial para personalizar trayectos y escalar soluciones formativas.</p>
+                </div>
 
-<h2>Experiencia</h2>
+            </div>
+        </section>
 
-<p>
-Asociación Conciencia · ETER · Edison · Cetrogar · UADE · UTN
-</p>
+        <!-- EXPERIENCIA -->
+        <section id="experiencia">
+            <h2 class="section-title">Han confiado en mí</h2>
+            <div class="experience-grid">
+                <div class="client-tag">Asociación Conciencia</div>
+                <div class="client-tag">ETER</div>
+                <div class="client-tag">Edison</div>
+                <div class="client-tag">Cetrogar</div>
+                <div class="client-tag">UADE</div>
+                <div class="client-tag">UTN</div>
+            </div>
+        </section>
 
-<h2>Contacto</h2>
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-links">
+                <a href="#" class="contact-card">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:tuemail@ejemplo.com" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="#" class="contact-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </section>
 
-<p>
-LinkedIn<br>
-Mail<br>
-WhatsApp
-</p>
+    </div>
 
 </body>
 </html>
