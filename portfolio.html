@@ -167,11 +167,97 @@
             font-size: 0.95rem;
             transition: all 0.2s ease;
             margin-top: auto;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
         }
 
         .project-link:hover {
             color: #7dd3fc;
             gap: 12px;
+        }
+
+        /* --- MODALES / POPUPS (ESTILOS PREMIUM) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-wrapper {
+            background-color: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-wrapper {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-wrapper h4 {
+            color: var(--primary-color);
+            margin: 20px 0 8px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .modal-wrapper p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .modal-wrapper ul {
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .modal-wrapper li {
+            margin-bottom: 6px;
         }
     </style>
 </head>
@@ -269,7 +355,7 @@
                     </div>
                     <h3 class="project-title">📊 Dashboard inscripciones · Data analytics</h3>
                     <p class="project-description">Plataforma de Business Intelligence a medida que transforma registros planos de Google Sheets en un centro de comando interactivo de alta fidelidad visual. Automatiza el cálculo de tasas de conversión por canal, identifica brechas demográficas en tiempo real y segmenta audiencias cruzadas con un solo clic para optimizar el monitoreo estratégico de convocatorias nacionales.</p>
-                    <a href="https://github.com/allamal/Inicio" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right"></i></a>
+                    <button onclick="openModal('modal-dashboard')" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
@@ -286,7 +372,7 @@
                     </div>
                     <h3 class="project-title">🎓 Gestión académica – Sistema de alerta temprana</h3>
                     <p class="project-description">Aplicación web de Learning Analytics orientada a la retención estudiantil preventiva en entornos virtuales. Procesa automáticamente reportes de avance y actividad para clasificar comisiones bajo algoritmos dinámicos de riesgo por inactividad, integrando un módulo de gestión CRM para bitácoras, alertas automatizadas y control institucional longitudinal.</p>
-                    <a href="https://github.com/allamal/Inicio" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right"></i></a>
+                    <button onclick="openModal('modal-sistema')" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
@@ -294,25 +380,81 @@
 
     </div>
 
-    <!-- SCRIPT DE FILTRADO INTERACTIVO -->
+    <!-- POPUP 1: MODAL DASHBOARD DE INSCRIPCIONES -->
+    <div id="modal-dashboard" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-dashboard')">
+        <div class="modal-wrapper">
+            <button class="modal-close" onclick="closeModal('modal-dashboard')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">📊 Dashboard inscripciones · Data Analytics</h2>
+            
+            <h4>💡 El problema</h4>
+            <p>Gestionar convocatorias a nivel nacional con miles de inscripciones y planillas ilegibles, métricas de conversión inexistentes, embudos de inscripción rotos y total ceguera respecto al impacto demográfico en tiempo real.</p>
+            
+            <h4>🚀 La solución</h4>
+            <p>Es una plataforma de Business Intelligence a medida que transforma registros planos de Google Sheets en un centro de comando interactivo y de alta fidelidad visual. Diseñado específicamente para el monitoreo estratégico de proyectos sociales y educativos, este sistema permite auditar el pulso real de la convocatoria. Resuelve la falta de visibilidad automatizando el cálculo de tasas de conversión por canal, identificando brechas geográficas en tiempo real y segmentando audiencias de manera cruzada con un solo clic.</p>
+            
+            <h4>🌟 Características clave & Storytelling visual</h4>
+            <p>Embudo de conversión realizado por canal; ranking total de provincias optimizado; filtros cruzados interactivos (Cross-Filtering); termómetro y análisis histórico (un módulo comparativo avanzado con cálculo de brechas que mide el rendimiento de la campaña actual frente al año anterior para asegurar el cumplimiento del objetivo global); acceso seguro y optimizado.</p>
+            
+            <h4>🛠️ Stack tecnológico</h4>
+            <ul>
+                <li><strong>Frontend:</strong> HTML5, CSS3 (Bootstrap 5 para un diseño responsivo y moderno), JavaScript Moderno (ES6+).</li>
+                <li><strong>Visualización de datos:</strong> Chart.js, configurado a bajo nivel para renderizados dinámicos, control de aspect-ratio adaptable y manejo de eventos onClick interactivos.</li>
+                <li><strong>Backend & Base de datos:</strong> Google Apps Script (GAS), actuando como el motor del servidor, consumiendo y procesando datos de Google Sheets en milisegundos a través de ejecuciones asíncronas (google.script.run).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- POPUP 2: MODAL GESTIÓN ACADÉMICA -->
+    <div id="modal-sistema" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-sistema')">
+        <div class="modal-wrapper">
+            <button class="modal-close" onclick="closeModal('modal-sistema')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">🎓 Gestión académica – Sistema de alerta temprana y Learning Analytics</h2>
+            
+            <h4>💡 El problema</h4>
+            <p>Los reportes tradicionales de los LMS entregan "fotos" estáticas del pasado, no flujos dinámicos del presente.</p>
+            
+            <h4>🚀 La solución</h4>
+            <p>Es una plataforma web de Learning Analytics y retención estudiantil que transforma datos crudos de plataformas educativas en estrategias preventivas de intervención en tiempo real. A través de un ecosistema visual e intuitivo, la aplicación procesa automáticamente los reportes de actividad y avance para segmentar a los estudiantes según su nivel de riesgo. El sistema no solo calcula la inactividad cronológica, sino que evalúa el progreso académico relativo comparando a cada alumno con el ritmo real de su comisión, permitiendo a los tutores anticiparse a la deserción mediante un módulo CRM integrado para registrar bitácoras, gestionar alertas sistémicas y automatizar el seguimiento.</p>
+            
+            <h4>🌟 Características clave</h4>
+            <ul>
+                <li><strong>Panel de Seguimiento Inteligente:</strong> Filtros dinámicos por carrera, comisiones, materias y buscador de alumnos por tokens que prioriza coincidencias exactas de identidad.</li>
+                <li><strong>Algoritmo de alerta temprana:</strong> Clasificación automatizada en semáforos basada en reglas de negocio customizables de inactividad e ingresos nulos.</li>
+                <li><strong>Detección de riesgo académico:</strong> Registro centralizado de gestiones; Módulo Business Intelligence (Datos macro) con matriz de análisis de salud institucional que permite comparar de manera longitudinal la evolución de la retención entre múltiples hitos de control.</li>
+            </ul>
+            
+            <h4>🛠️ Tecnología y Arquitectura</h4>
+            <p>Diseñado bajo un enfoque de costo cero de infraestructura ($0) y máxima eficiencia operativa, el proyecto se apoya por completo en soluciones Cloud corporativas:</p>
+            <ul>
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript Avanzado (ES6+) y Bootstrap 5.3 para una interfaz responsiva y fluida.</li>
+                <li><strong>Backend:</strong> Google Apps Script (GAS) como entorno de ejecución del lado del servidor.</li>
+                <li><strong>Persistencia de Datos:</strong> Google Sheets configurado como base de datos de alta velocidad mediante el uso de colecciones indexadas (Map en JS) para evitar cuellos de botella en consultas masivas.</li>
+                <li><strong>Integración de Archivos:</strong> Google Drive API para la sincronización y consolidación automatizada de reportes Excel externos en lotes.</li>
+                <li><strong>Seguridad:</strong> Autenticación nativa e inicio de sesión seguro mediante el protocolo OAuth2 de Google.</li>
+            </ul>
+
+            <h4 style="color: #4ade80;">📈 El valor de negocio (El resultado)</h4>
+            <p style="color: #cbd5e1;">Permite medir de manera real la tasa de efectividad de las intervenciones del equipo de retención, optimiza las horas de trabajo humano dirigiendo los esfuerzos hacia los estudiantes recuperables y reduce drásticamente las tasas de abandono institucional mediante el uso inteligente y pragmático de los datos.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE FILTRADO Y POPUPS -->
     <script>
+        // Lógica de Filtrado de Tarjetas
         function filterProjects(category, clickedButton) {
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            // Restablecer estilos de todos los botones
             buttons.forEach(btn => {
                 btn.style.background = 'var(--surface-color)';
                 btn.style.color = 'var(--text-main)';
                 btn.style.border = '1px solid rgba(255,255,255,0.1)';
             });
             
-            // Aplicar estilos activos al botón seleccionado
             clickedButton.style.background = 'var(--primary-color)';
             clickedButton.style.color = '#0f172a';
             clickedButton.style.border = 'none';
 
-            // Filtrar las tarjetas de la grilla
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'flex';
@@ -320,6 +462,24 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        // Lógica de Modales (Popups)
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto'; // Devuelve el scroll
+        }
+
+        function closeModalOnOverlay(event, modalId) {
+            // Cierra el modal solo si se hace clic fuera del contenedor blanco
+            if (event.target.id === modalId) {
+                closeModal(modalId);
+            }
         }
     </script>
 
