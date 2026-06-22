@@ -178,7 +178,7 @@
             gap: 12px;
         }
 
-        /* --- MODALES / POPUPS (ESTILOS PREMIUM) --- */
+        /* --- MODALES / POPUPS --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -308,7 +308,7 @@
             <article class="project-card" data-category="learning">
                 <div class="project-image" style="background: #0f172a; height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
                     <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="https://raw.githubusercontent.com/allamal/fotos/18bc4f8a94b65dd01fe109889a2508fe3dfcf5b3/screen-recording_Te9Al5oG.mp4" type="video/mp4">
+                        <source src="https://allamal.github.io/Inicio/screen-recording_Te9Al5oG.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
                 </div>
@@ -319,7 +319,7 @@
                     </div>
                     <h3 class="project-title">Curso en Articulate Rise</h3>
                     <p class="project-description">Desarrollo de módulos e-learning responsivos y navegables de alto impacto. Estructuración pedagógica de contenidos complejos mediante lecciones interactivas, componentes multimedia integrados y evaluaciones formativas orientadas al autoaprendizaje.</p>
-                    <a href="https://github.com/allamal/fotos/blob/18bc4f8a94b65dd01fe109889a2508fe3dfcf5b3/screen-recording_Te9Al5oG.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Ver en pantalla completa <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://allamal.github.io/Inicio/screen-recording_Te9Al5oG.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Ver en pantalla completa <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
 
@@ -327,7 +327,7 @@
             <article class="project-card" data-category="learning">
                 <div class="project-image" style="background: #0f172a; height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
                     <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="https://raw.githubusercontent.com/allamal/fotos/44eca7e52ea11a1a3cd7a4466faedbb4de6e1a2e/html%20lms.mp4" type="video/mp4">
+                        <source src="https://allamal.github.io/Inicio/html-lms_2SmtbJN6.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
                 </div>
@@ -338,7 +338,7 @@
                     </div>
                     <h3 class="project-title">Diseño de clases en HTML</h3>
                     <p class="project-description">Maquetación a medida de plantillas educativas nativas para entornos virtuales. Optimización estética y funcional que reemplaza los textos planos por interfaces scannables, con jerarquías visuales claras, elementos destacados y compatibilidad cross-platform.</p>
-                    <a href="https://github.com/allamal/fotos/blob/44eca7e52ea11a1a3cd7a4466faedbb4de6e1a2e/html%20lms.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Ver en pantalla completa <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://allamal.github.io/Inicio/html-lms_2SmtbJN6.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Ver en pantalla completa <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
 
@@ -440,7 +440,6 @@
 
     <!-- SCRIPTS DE FILTRADO Y POPUPS -->
     <script>
-        // Lógica de Filtrado de Tarjetas
         function filterProjects(category, clickedButton) {
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -464,19 +463,17 @@
             });
         }
 
-        // Lógica de Modales (Popups)
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = 'auto'; // Devuelve el scroll
+            document.body.style.overflow = 'auto';
         }
 
         function closeModalOnOverlay(event, modalId) {
-            // Cierra el modal solo si se hace clic fuera del contenedor blanco
             if (event.target.id === modalId) {
                 closeModal(modalId);
             }
