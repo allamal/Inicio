@@ -460,37 +460,38 @@
         </div>
     </div>
 
-    <!-- POPUP 3: MODAL SISTEMA DE EVALUACIONES SINCRÓNICAS -->
-    <div id="modal-examenes" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-examenes')">
-        <div class="modal-wrapper">
-            <button class="modal-close" onclick="closeModal('modal-examenes')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">📝 Evaluaciones sincrónicas</h2>
-            
-            <h4>💡 El problema</h4>
-            <p>La coordinación masiva de mesas examinadoras sincrónicas (finales virtuales) solía ser un caos logístico propicio para errores humanos: envío manual de enlaces de videoconferencia cruzados, planillas de notas internas vulnerables, retrasos en la validación contable de cuotas/documentación de alumnos y procesos de carga asincrónicos lentos en el sistema central.</p>
-            
-            <h4>🚀 La solución</h4>
-            <p>Se desarrolló una WebApp robusta en Google Apps Script que actúa como un centro unificado de control para el ciclo completo de exámenes de carreras a distancia. El sistema automatiza de extremo a extremo la generación y comunicación de grillas de fechas, la vinculación segura de salas virtuales de Meet por mesa y el armado de actas dinámicas con filtros de bloqueo en tiempo real basados en el estado administrativo del alumno. Además, provee al docente de una interfaz simplificada donde asienta la calificación, sincroniza la información al instante con los sistemas centrales (Quinttos) y despacha las liquidaciones profesionales correspondientes de forma automática y transparente.</p>
-            
-            <h4>🌟 Características clave</h4>
-            <ul>
-                <li><strong>Filtros Administrativos Automáticos:</strong> Bloquea o destaca dinámicamente en el acta interna a los alumnos con restricciones de documentación o cuotas pendientes antes de la evaluación.</li>
-                <li><strong>Comunicación Segmentada y Automatizada:</strong> Despacha por correo los enlaces de Meet, listados de inscriptos personalizados y recordatorios con plantillas estructuradas tanto para docentes como para estudiantes.</li>
-                <li><strong>Módulo Contable Integrado:</strong> Automatiza el cálculo y la asignación de honorarios docentes por mesa evaluadora con datos cruzados de administración institucional en un solo clic.</li>
-                <li><strong>Auditoría de Tiempos Legales:</strong> Control y registro estricto en la base de datos de los tiempos de grabación de cada encuentro y las tolerancias legales de conexión para resguardo institucional.</li>
-            </ul>
-            
-            <h4>🛠️ Stack tecnológico</h4>
-            <ul>
-                <li><strong>Arquitectura del Servidor:</strong> Google Apps Script (WebApp) operando bajo lógica de inyección dinámica de HTML en plantillas (*HTML Templates*).</li>
-                <li><strong>UI/UX Frontend:</strong> JavaScript Nativo (Manipulación avanzada de DOM) integrado con componentes responsivos de Bootstrap 5 y FontAwesome para control estético.</li>
-                <li><strong>Integraciones API Core:</strong> Google Calendar API (Calendarización y control de salas Meet), Gmail API (Estructura automatizada de mails tipo), Drive API (Persistencia documental e historial de actas fijas).</li>
-            </ul>
+<!-- POPUP 3: MODAL SISTEMA DE EVALUACIONES SINCRÓNICAS -->
+<div id="modal-examenes" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-examenes')">
+    <div class="modal-wrapper">
+        <button class="modal-close" onclick="closeModal('modal-examenes')"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">📝 Entorno seguro de exámenes sincrónicos y auditoría docente</h2>
+        
+        <h4>💡 El problema</h4>
+        <p>La evaluación a distancia en entornos web suele sufrir de vulnerabilidades críticas: pérdida de progreso por fallas de conectividad de los alumnos, dificultades para auditar el tiempo real de resolución y la exposición constante al fraude académico mediante el uso de herramientas de Inteligencia Artificial a través del copiado y pegado de textos.</p>
+        
+        <h4>🚀 La solución</h4>
+        <p>Se desarrolló una WebApp de alto rendimiento en Google Apps Script que funciona como un entorno controlado de rendición de exámenes. El sistema valida la identidad de manera unívoca, gestiona sesiones de tiempo estrictas y automatiza la persistencia de datos ante cualquier microcorte de red. Al mismo tiempo, ofrece al cuerpo docente un panel de control completamente aislado y protegido por contraseña para auditar las respuestas y asentar las calificaciones de forma centralizada sin intermediarios.</p>
+        
+        <h4>🌟 Mecanismos de Control & Integridad Académica</h4>
+        <ul>
+            <li><strong>Autenticación Única por DNI:</strong> La base de datos valida la identidad del estudiante e impide accesos duplicados o simultáneos a la misma evaluación.</li>
+            <li><strong>Temporizador de Sesión Server-Side:</strong> Una vez iniciado el examen, el contador comienza a correr del lado del servidor. Si el alumno cierra la pestaña, reinicia el navegador o pierde conexión, el tiempo sigue corriendo de forma lineal, impidiendo pausas maliciosas.</li>
+            <li><strong>Persistencia por Autoguardado Dinámico:</strong> Integra un script asíncrono que almacena las respuestas del estudiante en tiempo real a medida que escribe, eliminando el riesgo de pérdida de información por fallas técnicas.</li>
+            <li><strong>Bloqueo de Portapapeles (Anti-IA):</strong> Restringe por completo los eventos del teclado y mouse relacionados con pegar texto (`onpaste`), forzando la redacción manual y mitigando el uso de prompts pregenerados por Inteligencia Artificial.</li>
+            <li><strong>Módulo de Corrección Docente Restringido:</strong> Sección administrativa independiente y protegida bajo contraseña que permite a los profesores visualizar las respuestas consolidadas de cada alumno y asignar notas finales con total privacidad.</li>
+        </ul>
+        
+        <h4>🛠️ Stack tecnológico</h4>
+        <ul>
+            <li><strong>Arquitectura del Servidor:</strong> Google Apps Script (WebApp) procesando solicitudes asíncronas para el guardado progresivo de datos.</li>
+            <li><strong>UI/UX Frontend:</strong> HTML5, CSS3 (Bootstrap 5.3) y JavaScript Avanzado para la inhabilitación del portapapeles y la sincronización síncrona del reloj en pantalla.</li>
+            <li><strong>Persistencia de Datos:</strong> Google Sheets indexado para la persistencia inmediata de cada token de respuesta.</li>
+        </ul>
 
-            <h4 style="color: #4ade80;">📈 Impacto Operativo</h4>
-            <p style="color: #cbd5e1;">Elimina el 100% de la fricción administrativa en periodos críticos de exámenes. Centraliza los datos macro para auditoría académica inmediata y transforma un flujo operativo manual que tomaba días enteros de trabajo humano coordinado en un proceso sistémico automatizado, seguro y sin fallas.</p>
-        </div>
+        <h4 style="color: #4ade80;">📈 Impacto Operativo</h4>
+        <p style="color: #cbd5e1;">Garantiza un proceso de evaluación 100% transparente y auditable para las carreras a distancia[cite: 1]. Protege el valor del título institucional frente al fraude tecnológico y automatiza el resguardo de la información del estudiante, resolviendo las contingencias técnicas del examen sin costo de infraestructura.</p>
     </div>
+</div>
 
     <!-- SCRIPTS DE FILTRADO Y POPUPS -->
     <script>
