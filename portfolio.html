@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Alan Llamal</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -262,31 +264,36 @@
         .modal-wrapper li {
             margin-bottom: 6px;
         }
-    </style>
+    </script>
 </head>
 <body>
 
     <div class="container">
         
+        <!-- Botón Volver -->
         <nav class="nav-bar">
             <a href="https://allamal.github.io/Inicio/" class="btn-back">
                 <i class="fa-solid fa-arrow-left"></i> Volver al inicio
             </a>
         </nav>
 
+        <!-- Cabecera -->
         <header style="margin-bottom: 40px;">
             <h1 class="page-title">Portfolio de proyectos</h1>
             <p class="page-subtitle">Soluciones operativas y experiencias de aprendizaje diseñadas para potenciar la gestión académica.</p>
         </header>
 
+        <!-- BOTONES DE FILTRADO (TABS) -->
         <div style="display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap;">
             <button class="filter-btn active" onclick="filterProjects('all', this)" style="padding: 12px 24px; background: var(--primary-color); color: #0f172a; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Todos los proyectos</button>
             <button class="filter-btn" onclick="filterProjects('learning', this)" style="padding: 12px 24px; background: var(--surface-color); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Proyectos e-learning</button>
             <button class="filter-btn" onclick="filterProjects('tech', this)" style="padding: 12px 24px; background: var(--surface-color); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Diseño de soluciones operativas</button>
         </div>
 
+        <!-- GRILLA DE PROYECTOS -->
         <div class="portfolio-grid">
             
+            <!-- Tarjeta 1: CURSO STORYLINE (Categoría: learning) -->
             <article class="project-card" data-category="learning">
                 <div class="project-image">
                     <img src="https://raw.githubusercontent.com/allamal/fotos/refs/heads/main/Screen-Recording%20(1).gif" alt="Demo de curso en Articulate Storyline">
@@ -302,6 +309,7 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 2: CURSO RISE (Categoría: learning) -->
             <article class="project-card" data-category="learning">
                 <div class="project-image">
                     <video autoplay loop muted playsinline>
@@ -320,6 +328,7 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 3: CLASES EN HTML (Categoría: learning) -->
             <article class="project-card" data-category="learning">
                 <div class="project-image">
                     <video autoplay loop muted playsinline>
@@ -338,6 +347,7 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 4: APP DE GAMIFICACIÓN EN HTML (Categoría: learning) -->
             <article class="project-card" data-category="learning">
                 <div class="project-image">
                     <img src="https://github.com/allamal/fotos/blob/main/gamif.gif?raw=true" alt="Demo App de gamificación en HTML">
@@ -348,12 +358,13 @@
                         <span class="tag">Gamificación</span>
                         <span class="tag">Diseño instruccional</span>
                     </div>
-                    <h3 class="project-title">🎮 App de gamificación en HTML</h3>
+                    <h3 class="project-title">App de gamificación en HTML</h3>
                     <p class="project-description">El desarrollo convierte conceptos semiológicos complejos en un entorno de laboratorio seguro donde los estudiantes configuran titulares mediante variables sintácticas modulares. A través de un motor basado en JavaScript nativo, la interfaz evalúa algorítmicamente las decisiones del usuario y muestra en tiempo real un termómetro visual con la intensidad de la carga valorativa. Al finalizar las rondas temáticas, el sistema calcula un perfil de línea editorial personalizado y ofrece un cierre pedagógico que conecta la experiencia lúdica con la teoría de Roland Barthes. Es un recurso educativo autónomo, responsivo y de alto impacto didáctico, ideal para integrarse de forma nativa en cualquier sistema de gestión de aprendizaje.</p>
-                    <button onclick="openModal('modal-gamificacion')" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right"></i></button>
+                    <button onclick="openModal('modal-gamificacion')" class="project-link">Ver en pantalla completa <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
+            <!-- Tarjeta 5: DASHBOARD INSCRIPCIONES (Categoría: tech) -->
             <article class="project-card" data-category="tech">
                 <div class="project-image">
                     <img src="https://raw.githubusercontent.com/allamal/fotos/refs/heads/main/DASH%20BTF.gif" alt="Demo Dashboard Convocatorias">
@@ -370,6 +381,7 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 6: GESTIÓN ACADÉMICA & LEARNING ANALYTICS (Categoría: tech) -->
             <article class="project-card" data-category="tech">
                 <div class="project-image">
                     <img src="https://github.com/allamal/fotos/blob/main/gestion-aca.gif?raw=true" alt="Demo Sistema de Gestión Académica">
@@ -386,6 +398,7 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 7: ENTORNO SEGURO DE EXÁMENES (Categoría: tech) -->
             <article class="project-card" data-category="tech">
                 <div class="project-image">
                     <img src="https://github.com/allamal/fotos/blob/main/app-examen.gif?raw=true" alt="Demo Sistema de Exámenes Sincrónicos">
@@ -406,36 +419,16 @@
 
     </div>
 
+    <!-- POPUP 1: MODAL APP DE GAMIFICACIÓN -->
     <div id="modal-gamificacion" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-gamificacion')">
         <div class="modal-wrapper">
             <button class="modal-close" onclick="closeModal('modal-gamificacion')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">🎮 App de gamificación en HTML – "el experimento editorial"</h2>
-            
-            <h4>💡 el problema</h4>
-            <p>En la enseñanza introductoria del periodismo, comprender conceptos teóricos densos como los marcos de sentido o la diferencia entre denotación y connotación suele resultar abstracto. Los estudiantes tienden a percibir la redacción de titulares como un proceso mecánico, subestimando la falta de inocencia detrás de cada elección léxica.</p>
-            
-            <h4>🚀 la solución</h4>
-            <p>Se diseñó y programó un recurso educativo interactivo basado en la gamificación y el aprendizaje guiado. A través de un entorno controlado de 5 rondas temáticas, los alumnos configuran titulares seleccionando componentes sintácticos modulares. El sistema evalúa mecánicamente el sesgo ideológico implicado, forzando la reflexión práctica sobre el impacto de la subjetividad en las audiencias.</p>
-            
-            <h4>🌟 características técnicas y didácticas</h4>
-            <ul>
-                <li><strong>Termómetro de connotación reactivo:</strong> un script lógico evalúa en tiempo real el peso valorativo de las opciones seleccionadas y actualiza un indicador visual dinámico en la UI.</li>
-                <li><strong>Previsualización síncrona:</strong> simula el bloque estético de la portada antes de confirmarla, incentivando la prueba, el error y la asimilación autónoma.</li>
-                <li><strong>Motor de perfilado editorial:</strong> algoritmos en JavaScript clasifican el comportamiento del usuario al finalizar la actividad, asignando etiquetas que miden la carga valorativa de sus textos de forma longitudinal.</li>
-                <li><strong>Cierre pedagógico estructurado:</strong> conecta la experiencia lúdica directa con los conceptos teóricos de Roland Barthes sobre el sentido denotado y connotado.</li>
-            </ul>
-            
-            <h4>🛠️ stack tecnológico</h4>
-            <ul>
-                <li><strong>Frontend estructural:</strong> HTML5 y CSS3 con una arquitectura basada en variables nativas, layouts fluidos y animaciones de aceleración por GPU.</li>
-                <li><strong>Lógica del cliente:</strong> JavaScript vanilla (ES6+) estructurado para el manejo asíncrono de eventos e inyección de datos dinámicos en el DOM.</li>
-            </ul>
-
-            <h4 style="color: #4ade80;">📈 impacto operativo</h4>
-            <p style="color: #cbd5e1;">Eleva de forma drástica el engagement en las unidades teóricas complejas dentro del campus virtual. Al ser un desarrollo nativo en código web autónomo ($0 infraestructura), es liviano, responsivo y compatible con cualquier navegador móvil sin requerir configuraciones de servidores externos.</p>
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">App de gamificación en HTML</h2>
+            <p>El desarrollo convierte conceptos semiológicos complejos en un entorno de laboratorio seguro donde los estudiantes configuran titulares mediante variables sintácticas modulares. A través de un motor basado en JavaScript nativo, la interfaz evalúa algorítmicamente las decisiones del usuario y muestra en tiempo real un termómetro visual con la intensidad de la carga valorativa. Al finalizar las rondas temáticas, el sistema calcula un perfil de línea editorial personalizado y ofrece un cierre pedagógico que conecta la experiencia lúdica con la teoría de Roland Barthes. Es un recurso educativo autónomo, responsivo y de alto impacto didáctico, ideal para integrarse de forma nativa en cualquier sistema de gestión de aprendizaje.</p>
         </div>
     </div>
 
+    <!-- POPUP 2: MODAL DASHBOARD DE INSCRIPCIONES -->
     <div id="modal-dashboard" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-dashboard')">
         <div class="modal-wrapper">
             <button class="modal-close" onclick="closeModal('modal-dashboard')"><i class="fa-solid fa-xmark"></i></button>
@@ -459,20 +452,21 @@
         </div>
     </div>
 
+    <!-- POPUP 3: MODAL GESTIÓN ACADÉMICA -->
     <div id="modal-sistema" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-sistema')">
         <div class="modal-wrapper">
             <button class="modal-close" onclick="closeModal('modal-sistema')"><i class="fa-solid fa-xmark"></i></button>
             <h2 style="font-size: 1.8rem; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 15px;">🎓 Gestión académica – Sistema de alerta temprana y Learning Analytics</h2>
             
             <h4>💡 el problema</h4>
-            <p>Los reportes tradicionales de los LMS entregan "fotos" estáticas del pasado, no flujos dinámicos del presente.</p>
+            <p>Los reportes tradicionales de los LMS entrega "fotos" estáticas del pasado, no flujos dinámicos del presente.</p>
             
             <h4>🚀 la solución</h4>
             <p>Es una plataforma web de Learning Analytics y retención estudiantil que transforma datos crudos de plataformas educativas en estrategias preventivas de intervención en tiempo real. A través de un ecosistema visual e intuitivo, la aplicación procesa automáticamente los reportes de actividad y avance para segmentar a los estudiantes según su nivel de riesgo. El sistema no solo calcula la inactividad cronológica, sino que evalúa el progreso académico relativo comparando a cada alumno con el ritmo real de su comisión, permitiendo a los tutores anticiparse a la deserción mediante un módulo CRM integrado para registrar bitácoras, gestionar alertas sistémicas y automatizar el seguimiento.</p>
             
             <h4>🌟 características clave</h4>
             <ul>
-                <li><strong>Panel de Seguimiento Inteligente:</strong> Filtros dinámicos por carrera, comisiones, materias y buscador de alumnos por tokens que prioriza coincidencias exactas de identidad.</li>
+                <li><strong>Panel de Seguimiento Inteligente:</strong> Filtros dinámicos por carrera, comisiones, materias y buscador de alumnos por tokens que prioriza conciencias exactas de identidad.</li>
                 <li><strong>Algoritmo de alerta temprana:</strong> Clasificación automatizada en semáforos basada en reglas de negocio customizables de inactividad e ingresos nulos.</li>
                 <li><strong>Detección de riesgo académico:</strong> Registro centralizado de gestiones; Módulo Business Intelligence (Datos macro) con matriz de análisis de salud institucional que permite comparar de manera longitudinal la evolución de la retención entre múltiples hitos de control.</li>
             </ul>
@@ -492,6 +486,7 @@
         </div>
     </div>
 
+    <!-- POPUP 4: MODAL SISTEMA DE EVALUACIONES SINCRÓNICAS -->
     <div id="modal-examenes" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-examenes')">
         <div class="modal-wrapper">
             <button class="modal-close" onclick="closeModal('modal-examenes')"><i class="fa-solid fa-xmark"></i></button>
@@ -524,6 +519,7 @@
         </div>
     </div>
 
+    <!-- SCRIPTS DE FILTRADO Y POPUPS -->
     <script>
         function filterProjects(category, clickedButton) {
             const cards = document.querySelectorAll('.project-card');
