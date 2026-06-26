@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alan Llamal - Especialista en L&D, diseño instruccional y transformación digital. Capacitación corporativa, e-learning, onboarding y soluciones de automatización con Google Workspace.">
+    <meta name="description" content="Alan Llamal - Especialista en L&D, diseño instruccional y transformación digital. Capacitación corporativa, e-learning, onboarding y soluciones de automatizaci[...]">
     <meta name="theme-color" content="#0b1121">
     <meta property="og:title" content="Alan Llamal | L&D Consultant">
     <meta property="og:description" content="Experto en diseño de experiencias de aprendizaje y soluciones operativas para organizaciones.">
@@ -129,6 +129,35 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px var(--accent-glow);
             background-color: #7dd3fc;
+        }
+
+        /* New: outlined CTA style */
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 1px solid rgba(56,189,248,0.9);
+            transition: all 0.25s ease;
+            width: fit-content;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #0f172a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
         }
 
         /* --- SECCIONES GENÉRICAS --- */
@@ -413,14 +442,19 @@
                 <h1>Alan Llamal</h1>
                 <div class="tagline">L&D | diseño instruccional | employee experience</div>
                 <p class="bio">
-                    Especialista en aprendizaje organizacional. Diseño experiencias de capacitación, onboarding y transformación digital para organizaciones que buscan desarrollar personas, optimizar procesos y escalar su impacto.
+                    Especialista en aprendizaje organizacional. Diseño experiencias de capacitación, onboarding y transformación digital para organizaciones que buscan desarrollar personas, optimiz[...]
                 </p>
-                <a href="portfolio.html" class="btn">
-                    Ver portfolio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                </a>
+                <div class="btn-row">
+                    <a href="portfolio.html" class="btn" aria-label="Ver portfolio">
+                        Ver portfolio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#contacto" class="btn-outline" aria-label="Contactarme">
+                        Contactar <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="https://raw.githubusercontent.com/allamal/fotos/refs/heads/main/WhatsApp%20Image%202026-06-22%20at%2021.15.31.jpeg" alt="Alan Llamal, especialista en L&D y diseño instruccional" loading="lazy">
+                <img src="https://raw.githubusercontent.com/allamal/fotos/refs/heads/main/WhatsApp%20Image%202026-06-22%20at%2021.15.31.jpeg" alt="Alan Llamal, especialista en L&D y diseño instruccio[...]">
             </div>
         </header>
 
@@ -431,7 +465,7 @@
                 <div class="service-card">
                     <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
                     <h3>Capacitación corporativa</h3>
-                    <p>Diseño e implementación de programas de formación alineados con los objetivos estratégicos de la organización, orientados al desarrollo de competencias y la mejora del desempeño individual y colectivo.</p>
+                    <p>Diseño e implementación de programas de formación alineados con los objetivos estratégicos de la organización, orientados al desarrollo de competencias y la mejora del dese[...]
                 </div>
 
                 <div class="service-card">
@@ -455,7 +489,7 @@
                 <div class="service-card">
                     <i class="fa-solid fa-brain" aria-hidden="true"></i>
                     <h3>Tecnología para el aprendizaje y la gestión</h3>
-                    <p>Diseño de aplicaciones, dashboards y automatizaciones en Google Workspace que mejoran la experiencia de aprendizaje, la gestión operativa y el acceso a información estratégica.</p>
+                    <p>Diseño de aplicaciones, dashboards y automatizaciones en Google Workspace que mejoran la experiencia de aprendizaje, la gestión operativa y el acceso a información estra[...]
                 </div>
 
             </div>
@@ -532,7 +566,7 @@
                     <img src="https://github.com/allamal/fotos/blob/main/eter%20-%20copia.png?raw=true" alt="ETER" loading="lazy">
                 </div>
                 <div class="client-tag">
-                    <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/0195a44a-31d8-4925-871c-789c757786f6___2404c1d24902b87e4473b04ee66907a9.svg" alt="Cliente" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/allamal/fotos/5824a9f48e03bd87e02e447f95b0db95fc869b80/0195a44a-31d8-4925-871c-789c757786f6___2404c1d24902b87e4473b04ee66907a9.svg" alt="...">
                 </div>
                 <div class="client-tag">
                     <img src="https://github.com/allamal/fotos/blob/main/images%20-%20copia.png?raw=true" alt="UADE" loading="lazy">
