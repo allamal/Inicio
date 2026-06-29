@@ -447,6 +447,23 @@
 
         <!-- GRILLA DE PROYECTOS -->
         <div class="portfolio-grid" id="main-grid">
+
+            <!-- Tarjeta 9: TALENTFLOW OS (NUEVA APP FLAGSHIP) -->
+            <article class="project-card" data-category="tech">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/allamal/fotos/main/Captura%20de%20pantalla%202026-06-29%20195943.png" alt="TalentFlow OS - Sistema integral de RRHH" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">SPA</span>
+                        <span class="tag">GAS WebApp</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <h3 class="project-title">⚙️ TalentFlow OS · RRHH System</h3>
+                    <p class="project-description">Sistema integral híbrido (SaaS propio) que centraliza todo el ciclo de vida del colaborador. Panel unificado multipágina con módulos automatizados de onboarding, bajas, nómina y capacitaciones.</p>
+                    <button onclick="openModal('modal-talentflow')" class="project-link">Ver proyecto completo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </article>
             
             <!-- Tarjeta 1: CURSO STORYLINE -->
             <article class="project-card" data-category="learning">
@@ -585,6 +602,35 @@
     </div>
 
     <!-- --- SECCIÓN CASOS DE ESTUDIO (Solo soluciones operativas GAS) --- -->
+
+    <!-- MODAL NUEVO: TALENTFLOW OS -->
+    <div id="modal-talentflow" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-talentflow')" role="dialog" aria-modal="true" aria-labelledby="modal-title-talentflow">
+        <div class="modal-wrapper">
+            <button class="modal-close" onclick="closeModal('modal-talentflow')" aria-label="Cerrar modal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <h2 id="modal-title-talentflow">⚙️ TalentFlow OS</h2>
+            
+            <h4><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> El Problema</h4>
+            <p>La gestión de personas en las PyMEs suele ser un rompecabezas desorganizado. Los departamentos de administración y recursos humanos operan de manera fragmentada, utilizando herramientas sueltas (una planilla para sueldos, otra para capacitaciones, carpetas compartidas en Drive y correos informales). Esto genera graves ineficiencias.</p>
+            
+            <h4><i class="fa-solid fa-rocket" aria-hidden="true"></i> La Solución</h4>
+            <p>Plataforma web unificada (SaaS propio) con un menú lateral fijo que agrupa cinco módulos estratégicos y automatizados:</p>
+            <ul>
+                <li><strong>Panel de control:</strong> Dashboard dinámico con métricas en tiempo real (ej. empleados activos y costo de nómina mensual).</li>
+                <li><strong>Altas (Onboarding):</strong> Formulario inteligente que, en un paso, registra al colaborador, crea su estructura de carpetas en Drive, genera el contrato PDF y envía un correo de bienvenida HTML.</li>
+                <li><strong>Bajas (Offboarding):</strong> Módulo operativo para inactivar al personal, automatizando el cierre de su expediente.</li>
+                <li><strong>Liquidación (Payroll):</strong> Interfaz centralizada para volcar novedades económicas (horas extras, bonos) e impactar directo en la pre-nómina.</li>
+                <li><strong>Capacitaciones:</strong> Panel visual con sliders para monitorear el progreso de inducción de cada miembro del equipo.</li>
+            </ul>
+            
+            <h4><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Arquitectura Técnica</h4>
+            <p>Sistema híbrido de alto rendimiento en Google Workspace con costo cero de infraestructura:</p>
+            <ul>
+                <li><strong>Frontend (SPA):</strong> Aplicación Single Page maquetada con HTML5, CSS3, Tailwind CSS y tipografía Inter. Lógica JavaScript de lado del cliente para manipulación de estado y renderizado instantáneo sin recargas. Comunicación asíncrona vía <code>google.script.run</code>.</li>
+                <li><strong>Backend (GAS V8):</strong> Motor de negocio que orquesta la API, interactuando nativamente con DriveApp (carpetas), DocumentApp (inyección de datos con replaceText) y GmailApp (despacho de correos).</li>
+                <li><strong>Base de Datos Relacional:</strong> Centralizada en Google Sheets, uniendo 4 tablas clave vinculadas mediante un identificador único (ID_Empleado).</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- MODAL 2: DASHBOARD INSCRIPCIONES -->
     <div id="modal-dashboard" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-dashboard')" role="dialog" aria-modal="true" aria-labelledby="modal-title-dashboard">
